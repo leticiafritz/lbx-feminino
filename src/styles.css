@@ -20,8 +20,10 @@ body{
 
 .site-title {
     font-size: 3rem;
-    font-family: 'Rajdhani';
-    font-weight: bold;
+}
+
+.text-lowercase {
+    font-size: 1.2rem;
 }
 
 .nav ul{
@@ -39,6 +41,11 @@ body{
     display: flex;
     align-items: center;
     padding: .25rem;
+}
+
+.nav li.active {
+    background-color: #FFFFFF;
+    color: #000000;
 }
 
 .nav li:hover {
