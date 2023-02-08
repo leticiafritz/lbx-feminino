@@ -16,7 +16,7 @@ function Sobre(){
           Atualmente conta com <span className="sobredestaque2"> 263 participantes </span> (Atualização 04/02/2023).</p>
         </div>
         <div>
-          <img src={Logo} />
+          <img src={Logo} alt='' />
         </div>
       </div>
       <div>

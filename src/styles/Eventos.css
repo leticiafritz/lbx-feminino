@@ -1,62 +1,86 @@
+.eventotitle {
+  font-family: 'Rajdhani';
+  color: #895370;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
 .eventos {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-}
-.eventos .eventosTitle {
-  font-family: cursive;
-  font-size: 60px;
-}
-
-.eventosList {
-  width: 70vw;
-  height: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  place-items: center;
 }
 
 /* Evento ITEM STYLING */
 
 .eventosItem {
   border-radius: 15px;
-  width: 300px;
+  width: 450px;
   height: 350px;
   margin: 20px;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  font-family: 'Rajdhani';
+  color: #895370;
+  background-color: #eee0ea;
+  display: flex;
+  flex: 50%;
+  height: 100%;
+  align-items: center;
+  padding-left: 0px;
 }
+
+.image-container img{
+  overflow: hidden;
+  width: 220px;
+  height: 230px;
+}
+
+.card-content{
+  margin: 1rem;
+  margin-top: 0.5rem;
+}
+
 .eventosItem:hover {
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
   transition: 0.3s ease-in;
   cursor: pointer;
 }
 
-.eventosItem div {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  width: 100%;
-  height: 200px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.card-content h3{
+  margin: 0;
+  padding: 0;
 }
 
-.eventosItem h1,
-.eventosItem p {
-  margin-left: 20px;
+.card-content p{
+  margin: 0;
+  padding: 0px;
+  text-align: justify;
 }
 
-@media only screen and (max-width: 1300px) {
-  .eventosList {
-    grid-template-columns: 1fr 1fr;
-  }
+.card-title{
+  margin-bottom: 0.5rem;
 }
 
-@media only screen and (max-width: 800px) {
-  .eventosList {
-    grid-template-columns: 1fr;
-  }
+.btn{
+  display: flex;
+  justify-content: center;
+}
+
+.btn button{
+  padding: 0.5rem;
+  background-color: #895370;
+  border: none;
+  transition: 0.2s;
+  color: #FFFFFF;
+  font-family: 'Rajdhani';
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.btn button:hover{
+  background: #2d0719;
 }

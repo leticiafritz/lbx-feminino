@@ -13,7 +13,7 @@ function Navbar() {
   return (
     <div className="navbar">
       <div className="leftSide" id={openLinks ? "open" : "close"}>
-        <img src={Logo} />
+        <img src={Logo} alt=''/>
         <div className="title-navbar">
           <div className="bigWords">
             <NavLink exact activeClassName="active" to="/"> <b>LBXF</b> </NavLink>
