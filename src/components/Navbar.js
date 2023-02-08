@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Logo from "../assets/logo.png";
-import {Link} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import ReorderIcon from '@mui/icons-material/Reorder';
 import "../styles/Navbar.css";
 
@@ -16,7 +16,7 @@ function Navbar() {
         <img src={Logo} />
         <div className="title-navbar">
           <div className="bigWords">
-            <Link to="/"> <b>LBXF</b> </Link>
+            <NavLink exact activeClassName="active" to="/"> <b>LBXF</b> </NavLink>
           </div>
           <div className="lowWords">
             <p className="title-navbar">Liga Brasileira de</p>
@@ -24,21 +24,33 @@ function Navbar() {
           </div>
         </div>
         <div className="hiddenLinks">
-          <Link to="/sobre"> Sobre </Link>
-          <Link to="/integrantes"> Integrantes </Link>
-          <Link to="/eventos"> Eventos </Link>
-          <Link to="/calendario"> Calendario </Link>
-          <Link to="/textos"> Textos </Link>
-          <Link to="/contato"> Contato </Link>
+          <NavLink exact activeClassName="active" to="/sobre"> Sobre </NavLink>
+          <NavLink exact activeClassName="active" to="/integrantes"> Integrantes </NavLink>
+          <NavLink exact activeClassName="active" to="/eventos"> Eventos </NavLink>
+          <NavLink exact activeClassName="active" to="/calendario"> Calendario </NavLink>
+          <NavLink exact activeClassName="active" to="/textos"> Textos </NavLink>
+          <NavLink exact activeClassName="active" to="/contato"> Contato </NavLink>
         </div>
       </div>
       <div className="rightSide">
-        <Link to="/sobre"> Sobre </Link>
-        <Link to="/integrantes"> Integrantes </Link>
-        <Link to="/eventos"> Eventos </Link>
-        <Link to="/calendario"> Calendario </Link>
-        <Link to="/textos"> Textos </Link>
-        <Link to="/contato"> Contato </Link>
+        <div className="pagesevent">
+          <NavLink exact activeClassName="active" to="/sobre"> Sobre </NavLink>
+        </div>
+        <div className="pagesevent">
+          <NavLink exact activeClassName="active" to="/integrantes"> Integrantes </NavLink>
+        </div>
+        <div className="pagesevent">
+          <NavLink exact activeClassName="active" to="/eventos"> Eventos </NavLink>
+        </div>
+        <div className="pagesevent">
+          <NavLink exact activeClassName="active" to="/calendario"> Calendario </NavLink>
+        </div>
+        <div className="pagesevent">
+          <NavLink exact activeClassName="active" to="/textos"> Textos </NavLink>
+        </div>
+        <div className="pagesevent">
+          <NavLink exact activeClassName="active" to="/contato"> Contato </NavLink>
+        </div>
         <button onClick={toggleNavbar}>
           <ReorderIcon />
         </button>

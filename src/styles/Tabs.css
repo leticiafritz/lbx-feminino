@@ -1,0 +1,39 @@
+.Tabs{
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  display: flex;
+  flex: 50%;
+  font-family: 'Rajdhani';
+  color: #FFFFFF;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 4rem;
+}
+
+.tabsList{
+  display: flex;
+  background-color: #895370;
+}
+
+.tabsList .tabHead{
+  padding: 1rem;
+  font-weight: bold;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.tabContant{
+  background: #eee0ea;
+  color: #2d0719;
+  height: 100%;
+  width: 100%;
+  font-size: 1.2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.active{
+  background: #eee0ea;
+  color: #df3698;
+}

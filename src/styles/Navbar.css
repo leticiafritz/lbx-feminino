@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: row;
   font-family: 'Rajdhani';
-  background-color: #895370;
   color: #FFFFFF;
   justify-content: space-between;
   align-items: stretch;
@@ -25,7 +24,8 @@
 .navbar .bigWords{
   font-size: 2rem;
   line-height: 20px;
-  padding-top: 1rem;
+  padding-top: 0rem;
+  padding-left: 1rem;
 }
 
 .navbar .title-navbar{
@@ -38,22 +38,25 @@
 }
 
 .navbar .leftSide img {
-  width: 70px;
+  width: 90px;
 }
 
 .navbar .rightSide {
   flex: 50%;
   height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  justify-content: stretch;
   padding-right: 20px;
 }
 
 .navbar a {
-  color: white;
-  text-decoration: none;
+  text-decoration: inherit;
   margin: 20px;
+  color: #FFFFFF;
+  height: 50%;
+  display: flex;
+  align-items: center;
 }
 
 .navbar .rightSide button {
@@ -70,6 +73,7 @@
 .navbar #open {
   padding-left: 0px;
 }
+
 .navbar #open img {
   display: none;
 }
@@ -91,6 +95,23 @@
   width: 70px;
   margin: 5px;
 }
+
+.navbar .active {
+  background-color: #eee0ea;
+  color: #895370;
+  font-weight: bold;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding-top: 1.2rem;
+}
+
+.navbar .pagesevent:hover {
+    background-color: #eee0ea;
+    color: #895370;
+}
+
 @media only screen and (max-width: 900px) {
   .navbar .rightSide a {
     width: 70px;
@@ -98,6 +119,7 @@
   .navbar .leftSide {
     padding-left: 50px;
   }
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -105,9 +127,14 @@
     display: none;
   }
 
+  .navbar .lowWords {
+    display: none;
+  }
+
   .navbar .rightSide {
     justify-content: flex-end;
     padding-right: 50px;
+    flex-direction: column;
   }
 
   .navbar .rightSide button {

@@ -1,0 +1,36 @@
+.sobretitle {
+  font-family: 'Rajdhani';
+  color: #895370;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.descricao {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.sobretexto {
+  font-family: 'Rajdhani';
+  color: #000000;
+  font-size: 1.7rem;
+  margin: 2rem;
+}
+
+.sobredestaque {
+  color: #895370;
+  font-weight: bold;
+}
+
+.sobredestaque2 {
+  color: #895370;
+  font-weight: bold;
+}
+
+.descricao img {
+  width: 250px;
+  padding-right: 5rem;
+}
