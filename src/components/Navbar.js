@@ -37,8 +37,11 @@ function Navbar() {
           <NavLink exact activeClassName="active" to="/sobre"> Sobre </NavLink>
         </div>
         <div className="pagesevent">
-          <NavLink exact activeClassName="active" to="/integrantes"> Integrantes </NavLink>
-        </div>
+          <NavLink exact activeClassName="active" to="/integrantes"> 
+         
+            Integrantes 
+            
+            </NavLink></div>
         <div className="pagesevent">
           <NavLink exact activeClassName="active" to="/eventos"> Eventos </NavLink>
         </div>
