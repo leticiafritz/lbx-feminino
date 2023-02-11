@@ -1,5 +1,6 @@
 import './App.css';
 import Navbar from "./components/Navbar";
+import NavbarV2 from './components/NavBarV2';
 import Home from "./pages/Home";
 import Calendario from "./pages/Calendario";
 import Contato from "./pages/Contato";
@@ -8,12 +9,15 @@ import Integrantes from "./pages/Integrantes";
 import Sobre from "./pages/Sobre";
 import Textos from "./pages/Textos";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { Theme } from './Theme';
+import { ThemeProvider } from '@mui/material/styles';
 
 function App() {
     return (
-        <div className="App">
+        <ThemeProvider theme={Theme} >
+<div className="App">
             <Router>
-                <Navbar />
+                <NavbarV2 />
                 <Routes>
                     <Route exact path="/" element={<Home/>} />
                     <Route exact path="/sobre" element={<Sobre/>} />
@@ -25,6 +29,8 @@ function App() {
                 </Routes>
             </Router>
         </div>
+        </ThemeProvider>
+        
         )
 }
 
