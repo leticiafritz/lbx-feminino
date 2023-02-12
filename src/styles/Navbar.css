@@ -13,6 +13,10 @@
   font-size: 1.2rem;
 }
 
+.home_menu{
+  .color: '#2d0719'
+}
+
 .navbar .leftSide {
   flex: 50%;
   height: 100%;

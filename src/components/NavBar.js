@@ -2,6 +2,7 @@ import * as React from 'react'
 import PropTypes from 'prop-types'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
+import { styled } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline'
 import Divider from '@mui/material/Divider'
 import Drawer from '@mui/material/Drawer'
@@ -9,18 +10,62 @@ import IconButton from '@mui/material/IconButton'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
-import ListItemText from '@mui/material/ListItemText'
 import MenuIcon from '@mui/icons-material/Menu'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Logo from '../assets/logo.png'
 
 const drawerWidth = 240
-const navItems = ['Home', 'About', 'Contact']
 
-function NavbarV2(props) {
+const StyledTitleLink = styled(Link)({
+    color: '#ffffff',
+    'text-decoration': 'none',
+    fontSize: 25,
+    'line-height': 30,
+});
+
+const StyledLink = styled(Link)({
+    'text-decoration': 'none',
+    color: '#895370',
+
+    '&:focus':{
+      'text-decoration': 'none',
+    },
+    '&:hover':{
+      'text-decoration': 'none',
+    },
+    '&:visited':{
+      'text-decoration': 'none',
+    },
+    '&:link':{
+      'text-decoration': 'none',
+    },
+    '&:active':{
+      'text-decoration': 'none',
+    },
+});
+
+const AppBarButton = styled(Button)({
+
+  '&:hover': {
+    backgroundColor: '#eee0ea',
+    color: '#2d0719',
+  },
+  '&:active': {
+    backgroundColor: '#2d0719',
+    borderColor: '#2d0719',
+    color: '#eee0ea',
+  },
+  '&:focus': {
+    backgroundColor: '#2d0719',
+    borderColor: '#2d0719',
+    color: '#eee0ea',
+  },
+});
+
+function Navbar(props) {
   const { window } = props
   const [mobileOpen, setMobileOpen] = React.useState(false)
 
@@ -42,7 +87,7 @@ function NavbarV2(props) {
       Value: '/eventos',
     },
     {
-      Label: 'Calendario',
+      Label: 'Calendário',
       Value: '/calendario',
     },
     {
@@ -58,22 +103,26 @@ function NavbarV2(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        <img width={45} src={Logo} />
-        <div className="title-navbar">
-          <div className="bigWords">
-            <NavLink exact activeClassName="active" to="/">
-              {' '}
-              <b>LBXF</b>{' '}
-            </NavLink>
+        <img width={45} src={Logo} alt=''/>
+        <div >
+          <div >
+            <StyledLink exact to="/" >
+              <b>LBXF</b>
+            </StyledLink>
           </div>
         </div>
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+        {Routes.map((item) => (
+          <ListItem key={item.Label} disablePadding>
+            <ListItemButton
+                component={Link}
+                to={item.Value}
+                key={item.Value}
+                sx={{ textAlign: 'center' }}
+            >
+              {item.Label}
             </ListItemButton>
           </ListItem>
         ))}
@@ -103,22 +152,30 @@ function NavbarV2(props) {
               variant="h6"
               component="div"
               sx={{ display: { xs: 'none', sm: 'block' }, float: 'left' }}
+              style={{ marginRight: '1.5rem' }}
             >
               {' '}
-              <img width={90} src={Logo} />
+              <img width={90} src={Logo} alt=''/>
             </Typography>
+            <Box sx={{ display: { xs: 'none', sm: 'block'}, float: 'left' }}>
+            <StyledTitleLink exact to="/" >
+                <b>LBXF</b>
+            </StyledTitleLink>
+            <p style={{ 'line-height': 0, fontSize: 13}}>Liga Brasileira de</p>
+            <p style={{ 'line-height': 0, fontSize: 13}}>Xadrez Feminino</p>
+            </Box>
           </div>
 
           <Box sx={{ display: { xs: 'none', sm: 'block' }, float: 'right' }}>
             {Routes.map((item) => (
-              <Button
+              <AppBarButton color="inherit"
                 component={Link}
                 to={item.Value}
                 key={item.Value}
                 sx={{ color: '#fff' }}
               >
                 {item.Label}
-              </Button>
+              </AppBarButton>
             ))}
           </Box>
         </Toolbar>
@@ -148,8 +205,8 @@ function NavbarV2(props) {
   )
 }
 
-NavbarV2.propTypes = {
+Navbar.propTypes = {
   window: PropTypes.func,
 }
 
-export default NavbarV2
+export default Navbar
